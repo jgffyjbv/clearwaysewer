@@ -240,14 +240,100 @@ p { margin: 0 0 1rem; }
 
 /* Hero visual */
 .hero-visual { position: relative; display: flex; flex-direction: column; align-items: center; }
-.hero-pipe {
-  width: min(420px, 86vw); aspect-ratio: 1; border-radius: 50%;
-  object-fit: cover; object-position: 52% 46%;
-  border: 6px solid rgba(56,189,248,.25);
-  box-shadow: 0 30px 70px rgba(6,20,39,.55), 0 0 0 14px rgba(44,119,240,.10);
+.pipe-frame {
+  position: relative; width: min(420px, 86vw); aspect-ratio: 1;
   animation: floaty 7s ease-in-out infinite;
 }
+.hero-pipe {
+  position: relative; z-index: 1; display: block;
+  width: 100%; height: 100%; aspect-ratio: 1; border-radius: 50%;
+  object-fit: cover; object-position: 52% 46%;
+  border: 5px solid rgba(255,255,255,.14);
+  box-shadow: 0 30px 70px rgba(6,20,39,.55);
+}
+/* rotating glow ring — sits behind the pipe, showing as a live ring around the edge */
+.pipe-glow {
+  position: absolute; inset: -15px; border-radius: 50%; z-index: 0; pointer-events: none;
+  background: conic-gradient(from 0deg, transparent 0deg, #2c77f0 55deg, #38bdf8 128deg, #7dd3fc 172deg, transparent 232deg, transparent 360deg);
+  filter: blur(4px); opacity: .95;
+  animation: spin 7s linear infinite;
+}
+.pipe-glow::after {
+  content: ""; position: absolute; inset: 4px; border-radius: 50%;
+  box-shadow: 0 0 70px 10px rgba(56,189,248,.3);
+}
+/* animated "flowing water" shimmer over the pouring area */
+.pipe-water {
+  position: absolute; inset: 5px; border-radius: 50%; overflow: hidden; z-index: 2; pointer-events: none;
+}
+.pipe-water::before {
+  content: ""; position: absolute; inset: -30%;
+  background: repeating-linear-gradient(118deg, rgba(170,228,255,0) 0 9px, rgba(198,238,255,.6) 9px 12px, rgba(170,228,255,0) 12px 24px);
+  mix-blend-mode: screen; opacity: .5;
+  -webkit-mask: radial-gradient(56% 50% at 58% 74%, #000 12%, transparent 72%);
+          mask: radial-gradient(56% 50% at 58% 74%, #000 12%, transparent 72%);
+  animation: waterflow 1s linear infinite;
+}
 @keyframes floaty { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-14px);} }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes waterflow { to { transform: translateY(24px); } }
+
+/* ---------- 24-hour emergency badge ---------- */
+.em-badge {
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px;
+  font-family: var(--ff-display); font-weight: 800; font-size: clamp(.86rem, 1.4vw, 1.06rem);
+  letter-spacing: .04em; text-transform: uppercase; color: #fff;
+  background: linear-gradient(90deg, rgba(239,68,68,.24), rgba(44,119,240,.22));
+  border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 9px 20px 9px 15px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.22);
+}
+.em-badge__dot {
+  width: 11px; height: 11px; border-radius: 50%; background: #ff5a52; flex: none;
+  box-shadow: 0 0 0 0 rgba(255,90,82,.7); animation: empulse 1.8s ease-out infinite;
+}
+@keyframes empulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,90,82,.65); }
+  70% { box-shadow: 0 0 0 13px rgba(255,90,82,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,90,82,0); }
+}
+
+/* ---------- emergency popup ---------- */
+.em-modal {
+  position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center;
+  padding: 20px; background: rgba(6,20,39,.62); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+.em-modal.on { opacity: 1; pointer-events: auto; }
+.em-modal__box {
+  position: relative; max-width: 420px; width: 100%; text-align: center; color: #fff;
+  background: linear-gradient(160deg, #0e2746, #0a1d35); border: 1px solid rgba(56,189,248,.28);
+  border-radius: 22px; padding: 36px 30px 28px; box-shadow: 0 40px 90px rgba(0,0,0,.5);
+  transform: translateY(18px) scale(.97); transition: transform .4s cubic-bezier(.16,1,.3,1);
+}
+.em-modal.on .em-modal__box { transform: none; }
+.em-modal__x {
+  position: absolute; top: 12px; right: 14px; width: 34px; height: 34px; border: none; cursor: pointer;
+  background: rgba(255,255,255,.08); color: #fff; border-radius: 50%; font-size: 20px; line-height: 1;
+}
+.em-modal__x:hover { background: rgba(255,255,255,.18); }
+.em-modal__ic {
+  width: 66px; height: 66px; margin: 0 auto 16px; border-radius: 50%;
+  background: linear-gradient(135deg, #ff5a52, #c1281f); display: grid; place-items: center;
+  box-shadow: 0 0 0 9px rgba(255,90,82,.14);
+}
+.em-modal__ic svg { width: 32px; height: 32px; color: #fff; }
+.em-modal__eyebrow {
+  font-family: var(--ff-display); font-weight: 800; text-transform: uppercase; letter-spacing: .16em;
+  font-size: .78rem; color: #7dd3fc; margin-bottom: 8px;
+}
+.em-modal h3 { font-family: var(--ff-display); font-size: 1.62rem; font-weight: 800; margin-bottom: 8px; line-height: 1.15; }
+.em-modal p { color: rgba(255,255,255,.82); margin-bottom: 22px; font-size: 1rem; }
+.em-modal__call { width: 100%; justify-content: center; font-size: 1.14rem; }
+.em-modal__later {
+  display: block; margin: 14px auto 0; background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,.55); font-size: .9rem; text-decoration: underline;
+}
+.em-modal__later:hover { color: #fff; }
 .hero-badge {
   margin-top: 22px; position: relative; z-index: 2;
   background: #fff; color: var(--ink); border-radius: 16px; padding: 14px 18px;
@@ -263,7 +349,7 @@ p { margin: 0 0 1rem; }
   .hero-cta, .hero-trust { justify-content: center; }
   .hero-sub { margin-left:auto; margin-right:auto; }
   .hero-visual { order: -1; margin-bottom: 8px; }
-  .hero-pipe { width: min(320px, 76vw); }
+  .pipe-frame { width: min(320px, 76vw); }
 }
 
 /* ---------- Services ---------- */
@@ -428,5 +514,5 @@ p { margin: 0 0 1rem; }
 .reveal.d3 { transition-delay: .24s; } .reveal.d4 { transition-delay: .32s; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity:1 !important; transform:none !important; }
-  .hero-pipe, .hero-water { animation: none !important; }
+  .hero-pipe, .hero-water, .pipe-frame, .pipe-glow, .pipe-water::before, .em-badge__dot { animation: none !important; }
 }

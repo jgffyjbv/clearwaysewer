@@ -40,7 +40,7 @@
   {"@context":"https://schema.org","@type":"Plumber","@id":"https://clearwaysewer.com/#business","name":"Clear Way Sewer & Drain","image":"https://clearwaysewer.com/assets/img/og-card.jpg","address":{"@type":"PostalAddress","addressRegion":"NY","addressCountry":"US"},"description":"Clear Way Sewer & Drain provides experienced, reliable, and fully insured sewer and drain cleaning, drain snaking, hydro jetting, and camera inspection services for residential and commercial customers throughout Orange, Sullivan, Dutchess, and Ulster County, NY. Emergency service available.","slogan":"Clear Blockages. Restore Flow.","url":"https://clearwaysewer.com","telephone":"+1-845-690-0020","email":"info@clearwaysewer.com","priceRange":"$$","founder":{"@type":"Person","name":"Yitzchok Kahan"},"areaServed":[{"@type":"AdministrativeArea","name":"Orange County, NY"},{"@type":"AdministrativeArea","name":"Sullivan County, NY"},{"@type":"AdministrativeArea","name":"Dutchess County, NY"},{"@type":"AdministrativeArea","name":"Ulster County, NY"}],"availableLanguage":["English"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Sewer & Drain Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Sewer & Drain Cleaning","description":"Professional cleaning of clogged sewer lines and drains for homes and businesses."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Drain Snaking","description":"Mechanical drain snaking to clear blockages and restore flow."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Hydro Jetting","description":"High-pressure hydro jetting to remove grease, roots, and stubborn buildup from sewer and drain lines."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Camera Inspections","description":"Video camera inspections to locate and diagnose sewer and drain line problems."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Residential & Commercial Service","description":"Sewer and drain solutions for both residential homeowners and commercial properties."}}]}}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you offer emergency service for sewer backups?","acceptedAnswer":{"@type":"Answer","text":"Yes. Sewer and drain emergencies don't keep regular hours, so we offer emergency service for urgent backups and overflows. Call us at (845) 690-0020 and we'll get to you as quickly as we can."}},{"@type":"Question","name":"What's the difference between drain snaking and hydro jetting?","acceptedAnswer":{"@type":"Answer","text":"Snaking uses a motorized cable to break through and pull out a clog, ideal for routine blockages like hair and buildup. Hydro jetting uses high-pressure water to scour the entire pipe clean, making it the better choice for grease, scale, roots, or recurring backups."}},{"@type":"Question","name":"Why would I need a camera inspection?","acceptedAnswer":{"@type":"Answer","text":"A camera inspection lets us see inside your line and find the exact cause and location of a problem (roots, a crack, a belly, or a collapse) so there is no guesswork, no unnecessary digging, and you only pay to fix what is actually wrong."}},{"@type":"Question","name":"How much does drain or sewer cleaning cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on the type of clog, where it is, and the method the job calls for. We give you a clear, upfront price before any work begins, with no surprise charges added afterward."}},{"@type":"Question","name":"What areas do you serve?","acceptedAnswer":{"@type":"Answer","text":"We serve homeowners and businesses across Orange, Sullivan, Dutchess, and Ulster County, including Monroe, Chester, Kiryas Joel, Monticello, South Fallsburg, Poughkeepsie, and Kingston. If you're not sure whether we reach you, give us a call."}}]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you offer emergency service for sewer backups?","acceptedAnswer":{"@type":"Answer","text":"Yes. Sewer and drain emergencies don't keep regular hours, so we offer emergency service for urgent backups and overflows. Call us at (845) 690-0020 and we'll get to you as quickly as we can."}},{"@type":"Question","name":"What's the difference between drain snaking and hydro jetting?","acceptedAnswer":{"@type":"Answer","text":"Snaking uses a motorized cable to break through and pull out a clog, ideal for routine blockages like hair and buildup. Hydro jetting uses high-pressure water to scour the entire pipe clean, making it the better choice for grease, scale, roots, or recurring backups."}},{"@type":"Question","name":"Why would I need a camera inspection?","acceptedAnswer":{"@type":"Answer","text":"A camera inspection lets us see inside your line and find the exact cause and location of a problem (roots, a crack, a belly, or a collapse) so there is no guesswork, no unnecessary digging, and you only pay to fix what is actually wrong."}},{"@type":"Question","name":"How much does drain or sewer cleaning cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on the type of clog, where it is, and the method the job calls for. We give you a clear, upfront price before any work begins, with no surprise charges added afterward."}},{"@type":"Question","name":"What areas do you serve?","acceptedAnswer":{"@type":"Answer","text":"We serve homeowners and businesses across Orange, Sullivan, Dutchess, and Ulster County. If you're not sure whether we reach you, give us a call."}}]}
   </script>
 </head>
 <body>
@@ -91,7 +91,7 @@
       <div class="hero-water"></div>
       <div class="container hero-inner">
         <div class="hero-copy">
-          <span class="eyebrow on-dark" style="font-weight:800;">Emergency Service Available</span>
+          <span class="em-badge"><span class="em-badge__dot" aria-hidden="true"></span>24 Hour Emergency Service</span>
           <h1>Slow Drain or Backed-Up Sewer? <a href="#contact" class="hl" style="text-decoration:underline;text-underline-offset:4px;">Contact Us</a></h1>
           <p class="hero-sub">Clear Way Sewer &amp; Drain handles sewer &amp; drain cleaning, snaking, hydro jetting, and camera inspections for homes and businesses across Orange, Sullivan, Dutchess &amp; Ulster County and the surrounding Hudson Valley. Fast, reliable, fully insured service when you need it most.</p>
           <div class="hero-cta">
@@ -109,10 +109,14 @@
         </div>
 
         <div class="hero-visual">
-          <picture>
-            <source srcset="assets/img/hero-pipe.webp" type="image/webp" />
-            <img class="hero-pipe" src="assets/img/hero-pipe.jpg" width="452" height="452" alt="Sewer pipe flushed clean with water flowing freely after a Clear Way drain cleaning" />
-          </picture>
+          <div class="pipe-frame">
+            <span class="pipe-glow" aria-hidden="true"></span>
+            <picture>
+              <source srcset="assets/img/hero-pipe.webp" type="image/webp" />
+              <img class="hero-pipe" src="assets/img/hero-pipe.jpg" width="452" height="452" alt="Sewer pipe flushed clean with water flowing freely after a Clear Way drain cleaning" />
+            </picture>
+            <span class="pipe-water" aria-hidden="true"></span>
+          </div>
           <div class="hero-badge">
             <span class="ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <span><small>Call us anytime</small><strong>(845) 690-0020</strong></span>
@@ -236,21 +240,13 @@
         <div class="section-head reveal" style="margin-bottom:8px;">
           <span class="eyebrow">Where We Work</span>
           <h2>Proudly Serving the Hudson Valley &amp; Catskills</h2>
-          <p>Local sewer &amp; drain service for homeowners and businesses across Orange, Sullivan, Dutchess, and Ulster County and the surrounding communities. In the 845 and not sure if we reach you? Just give us a call.</p>
+          <p>Local sewer &amp; drain service for homeowners and businesses across Orange, Sullivan, Dutchess, and Ulster County. Not sure whether we reach you? Just give us a call.</p>
         </div>
         <div class="chips reveal d1">
           <span class="chip"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Orange County</span>
           <span class="chip">Sullivan County</span>
           <span class="chip">Dutchess County</span>
           <span class="chip">Ulster County</span>
-          <span class="chip">Monroe</span>
-          <span class="chip">Chester</span>
-          <span class="chip">Kiryas Joel</span>
-          <span class="chip">Middletown</span>
-          <span class="chip">Monticello</span>
-          <span class="chip">South Fallsburg</span>
-          <span class="chip">Poughkeepsie</span>
-          <span class="chip">Kingston</span>
         </div>
       </div>
     </section>
@@ -281,7 +277,7 @@
           </div>
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false" aria-controls="a5">What areas do you serve?<span class="qmark"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
-            <div class="faq-a" aria-hidden="true" id="a5"><div class="faq-a-inner">We serve homeowners and businesses across Orange, Sullivan, Dutchess, and Ulster County, including Monroe, Chester, Kiryas Joel, Monticello, South Fallsburg, Poughkeepsie, Kingston, and the surrounding communities. If you're not sure whether we reach you, just give us a call and ask.</div></div>
+            <div class="faq-a" aria-hidden="true" id="a5"><div class="faq-a-inner">We serve homeowners and businesses across Orange, Sullivan, Dutchess, and Ulster County. If you're not sure whether we reach you, just give us a call and ask.</div></div>
           </div>
         </div>
       </div>
@@ -437,6 +433,35 @@
     </a>
   </div>
 
+  <!-- 24-hour emergency popup -->
+  <div class="em-modal" id="emModal" role="dialog" aria-modal="true" aria-labelledby="emTitle">
+    <div class="em-modal__box">
+      <button class="em-modal__x" data-close aria-label="Close">&times;</button>
+      <div class="em-modal__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg></div>
+      <div class="em-modal__eyebrow">24 Hour Emergency Service</div>
+      <h3 id="emTitle">Sewer backup or clogged drain?</h3>
+      <p>We're available around the clock — day or night. Don't wait on standing water.</p>
+      <a href="tel:+18456900020" class="btn btn-primary btn-lg em-modal__call">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call (845) 690-0020
+      </a>
+      <button class="em-modal__later" data-close>Maybe later</button>
+    </div>
+  </div>
+
   <script src="assets/js/main.js" defer></script>
+  <script>
+  (function(){
+    var m = document.getElementById('emModal'); if(!m) return;
+    var seen; try { seen = sessionStorage.getItem('cw_em_seen'); } catch(e){}
+    function close(){ m.classList.remove('on'); try { sessionStorage.setItem('cw_em_seen','1'); } catch(e){} }
+    function open(){ m.classList.add('on'); }
+    if(!seen){ setTimeout(open, 2200); }
+    m.addEventListener('click', function(e){ if(e.target === m) close(); });
+    m.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', close); });
+    var call = m.querySelector('.em-modal__call'); if(call) call.addEventListener('click', close);
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && m.classList.contains('on')) close(); });
+  })();
+  </script>
 </body>
 </html>
