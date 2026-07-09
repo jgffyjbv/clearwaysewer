@@ -115,42 +115,46 @@
               <source srcset="assets/img/hero-pipe.webp" type="image/webp" />
               <img class="hero-pipe" src="assets/img/hero-pipe.jpg" width="452" height="452" alt="Sewer pipe flushed clean with water flowing freely after a Clear Way drain cleaning" />
             </picture>
-            <span class="pipe-water" aria-hidden="true"></span>
             <svg class="pipe-flow" viewBox="0 0 100 100" aria-hidden="true">
               <defs>
-                <linearGradient id="pfGrad" x1="0" y1="0" x2=".28" y2="1">
-                  <stop offset="0" stop-color="#7dd3fc"/><stop offset=".35" stop-color="#38bdf8"/><stop offset=".7" stop-color="#1d4ed8"/><stop offset="1" stop-color="#1d4ed8" stop-opacity="0"/>
+                <linearGradient id="pfGrad" x1=".15" y1="0" x2=".4" y2="1">
+                  <stop offset="0" stop-color="#bae6fd"/><stop offset=".28" stop-color="#38bdf8"/><stop offset=".68" stop-color="#1d4ed8"/><stop offset="1" stop-color="#1d4ed8" stop-opacity="0"/>
                 </linearGradient>
-                <filter id="pfTurb" x="-30%" y="-15%" width="160%" height="140%" color-interpolation-filters="sRGB">
-                  <feTurbulence type="turbulence" baseFrequency="0.013 0.032" numOctaves="2" seed="4" result="t">
-                    <animate attributeName="baseFrequency" dur="8s" values="0.013 0.032;0.021 0.05;0.013 0.032" repeatCount="indefinite"/>
+                <filter id="pfTurb" x="-25%" y="-10%" width="150%" height="145%" color-interpolation-filters="sRGB">
+                  <feTurbulence type="turbulence" baseFrequency="0.012 0.028" numOctaves="2" seed="5" result="t">
+                    <animate attributeName="baseFrequency" dur="7s" values="0.012 0.028;0.02 0.046;0.012 0.028" repeatCount="indefinite"/>
                   </feTurbulence>
-                  <feDisplacementMap in="SourceGraphic" in2="t" scale="3.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
-                  <feGaussianBlur in="d" stdDeviation=".5"/>
+                  <feDisplacementMap in="SourceGraphic" in2="t" scale="5.5" xChannelSelector="R" yChannelSelector="G" result="d"/>
+                  <feGaussianBlur in="d" stdDeviation=".25"/>
                 </filter>
-                <clipPath id="pfClip"><path d="M61,54 C63,69 68,84 74,101 L83,101 C79,85 74,70 69,54 Z"/></clipPath>
               </defs>
               <g class="pf-water">
-                <path class="pf-stream" d="M63,55 C65,69 70,84 75,100 L81,100 C77,85 72,70 68,55 Z" fill="url(#pfGrad)" opacity=".72"/>
-                <path class="pf-stream" d="M65,55 C67,69 72,84 77,100 L81,100 C78,86 73,71 70,55 Z" fill="url(#pfGrad)" opacity=".5"/>
-                <path class="pf-stream" d="M66,56 C69,70 73,84 78,100 L80,100 C78,87 74,72 71,56 Z" fill="url(#pfGrad)" opacity=".35"/>
-                <path class="pf-edge" d="M63,55 C65,69 70,84 75,100" fill="none" stroke="#fff" stroke-width="1.1" stroke-linecap="round" opacity=".3"/>
-                <g clip-path="url(#pfClip)">
-                  <path class="pf-flow f1" d="M64,55 C66,69 71,84 76,100" fill="none" stroke="#eaf9ff" stroke-width="1.6" stroke-linecap="round"/>
-                  <path class="pf-flow f2" d="M67,56 C70,70 74,84 78,100" fill="none" stroke="#bae6fd" stroke-width="1.2" stroke-linecap="round"/>
-                  <path class="pf-flow f3" d="M63,56 C65,70 70,84 74,100" fill="none" stroke="#dff4ff" stroke-width="1" stroke-linecap="round"/>
-                </g>
+                <path class="pf-stream s1" d="M63,58 C64,72 66,87 69,102 L76,102 C72,87 69,72 69,58 Z" fill="url(#pfGrad)" opacity=".55"/>
+                <path class="pf-stream s5" d="M80,59 C83,72 88,85 94,102 L101,102 C97,87 92,72 87,59 Z" fill="url(#pfGrad)" opacity=".45"/>
+                <path class="pf-stream s4" d="M76,58 C79,72 84,85 90,102 L98,102 C93,87 88,72 84,58 Z" fill="url(#pfGrad)" opacity=".6"/>
+                <path class="pf-stream s2" d="M67,57 C69,71 72,86 76,102 L84,102 C79,87 75,72 74,57 Z" fill="url(#pfGrad)" opacity=".72"/>
+                <path class="pf-stream s3" d="M71,57 C74,71 79,85 84,102 L94,102 C88,86 82,71 80,57 Z" fill="url(#pfGrad)" opacity=".8"/>
+                <path class="pf-edge" d="M67,57 C69,71 72,86 76,102" fill="none" stroke="#eaf9ff" stroke-width="1" stroke-linecap="round" opacity=".3"/>
+                <ellipse class="pf-str str1" cx="71" cy="60" rx=".9" ry="3" fill="#eaf9ff"/>
+                <ellipse class="pf-str str2" cx="76" cy="59" rx="1.1" ry="3.5" fill="#dff4ff"/>
+                <ellipse class="pf-str str3" cx="79" cy="61" rx=".8" ry="3" fill="#bae6fd"/>
               </g>
-              <g class="pf-drops" fill="#7dd3fc">
-                <circle class="pf-drop d1" cx="73" cy="70" r="1.2"/><circle class="pf-drop d2" cx="69" cy="78" r=".9"/>
-                <circle class="pf-drop d3" cx="80" cy="82" r="1.4"/><circle class="pf-drop d4" cx="67" cy="87" r=".8"/>
-                <circle class="pf-drop d5" cx="82" cy="90" r="1"/><circle class="pf-drop d6" cx="72" cy="94" r="1.3"/>
-                <circle class="pf-drop d7" cx="76" cy="66" r=".8"/><circle class="pf-drop d8" cx="79" cy="75" r="1.1"/>
+              <g class="pf-spray" fill="#7dd3fc">
+                <circle class="pf-d" style="--dx:5px;--dy:18px;animation-delay:0s;animation-duration:1.6s" cx="73" cy="58" r="1"/>
+                <circle class="pf-d" style="--dx:-4px;--dy:15px;animation-delay:.35s;animation-duration:1.9s" cx="71" cy="59" r=".8"/>
+                <circle class="pf-d" style="--dx:10px;--dy:13px;animation-delay:.6s;animation-duration:1.7s" cx="77" cy="57" r="1.2"/>
+                <circle class="pf-d" style="--dx:3px;--dy:23px;animation-delay:.2s;animation-duration:2.2s" cx="74" cy="60" r="1"/>
+                <circle class="pf-d" style="--dx:13px;--dy:11px;animation-delay:.9s;animation-duration:1.8s" cx="79" cy="58" r=".9"/>
+                <circle class="pf-d" style="--dx:-1px;--dy:25px;animation-delay:1.1s;animation-duration:2s" cx="72" cy="60" r="1.3"/>
+                <circle class="pf-d" style="--dx:8px;--dy:9px;animation-delay:.45s;animation-duration:1.5s" cx="75" cy="57" r=".7"/>
+                <circle class="pf-d" style="--dx:11px;--dy:21px;animation-delay:.75s;animation-duration:2.3s" cx="78" cy="61" r="1.1"/>
+                <circle class="pf-d" style="--dx:-6px;--dy:14px;animation-delay:1.3s;animation-duration:1.9s" cx="70" cy="58" r=".9"/>
+                <circle class="pf-d" style="--dx:6px;--dy:28px;animation-delay:.55s;animation-duration:2.5s" cx="74" cy="59" r="1"/>
               </g>
               <g class="pf-ripples" fill="none" stroke="#7dd3fc" stroke-width=".7">
-                <ellipse class="pf-ripple rp1" cx="76" cy="99" rx="4" ry="1.3"/>
-                <ellipse class="pf-ripple rp2" cx="76" cy="99" rx="4" ry="1.3"/>
-                <ellipse class="pf-ripple rp3" cx="76" cy="99" rx="4" ry="1.3"/>
+                <ellipse class="pf-ripple rp1" cx="83" cy="99" rx="4.5" ry="1.4"/>
+                <ellipse class="pf-ripple rp2" cx="83" cy="99" rx="4.5" ry="1.4"/>
+                <ellipse class="pf-ripple rp3" cx="83" cy="99" rx="4.5" ry="1.4"/>
               </g>
             </svg>
           </div>

@@ -279,32 +279,32 @@ p { margin: 0 0 1rem; }
 @keyframes waterflow { to { transform: translateY(24px); } }
 
 /* ---------- animated pipe water overlay ---------- */
-.pipe-flow { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 3; pointer-events: none; overflow: visible; }
-.pf-flow { opacity: 0; }
-.pf-drop, .pf-ripple { transform-box: fill-box; transform-origin: center; opacity: 0; }
+.pipe-flow { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; overflow: visible; }
+.pf-stream, .pf-str, .pf-d, .pf-ripple { transform-box: fill-box; }
+.pf-stream { transform-origin: 50% 0; }
+.pf-str, .pf-d, .pf-ripple { transform-origin: center; opacity: 0; }
 @media (prefers-reduced-motion: no-preference) {
   .pf-water { filter: url(#pfTurb); }
-  .pf-flow { opacity: .6; stroke-dasharray: 3 12; animation: pfFlow linear infinite; }
-  .pf-flow.f1 { animation-duration: 1.8s; }
-  .pf-flow.f2 { animation-duration: 2.9s; }
-  .pf-flow.f3 { animation-duration: 2.3s; }
-  .pf-drop { animation: pfDrop ease-in infinite; }
-  .pf-drop.d1 { animation-duration: 2s;   animation-delay: 0s;   }
-  .pf-drop.d2 { animation-duration: 2.6s; animation-delay: .4s;  }
-  .pf-drop.d3 { animation-duration: 2.2s; animation-delay: .9s;  }
-  .pf-drop.d4 { animation-duration: 2.8s; animation-delay: 1.3s; }
-  .pf-drop.d5 { animation-duration: 2.1s; animation-delay: .6s;  }
-  .pf-drop.d6 { animation-duration: 2.5s; animation-delay: 1.6s; }
-  .pf-drop.d7 { animation-duration: 3s;   animation-delay: 1.1s; }
-  .pf-drop.d8 { animation-duration: 2.3s; animation-delay: .2s;  }
+  .pf-stream { animation: pfSurge ease-in-out infinite; }
+  .pf-stream.s1 { animation-duration: 2.6s; }
+  .pf-stream.s2 { animation-duration: 1.7s; }
+  .pf-stream.s3 { animation-duration: 2.1s; }
+  .pf-stream.s4 { animation-duration: 3.1s; }
+  .pf-stream.s5 { animation-duration: 2.4s; }
+  .pf-str { animation: pfFall ease-in infinite; }
+  .pf-str.str1 { animation-duration: 1.9s; animation-delay: 0s;  }
+  .pf-str.str2 { animation-duration: 2.3s; animation-delay: .5s; }
+  .pf-str.str3 { animation-duration: 2.7s; animation-delay: 1s;  }
+  .pf-d { animation-name: pfSpray; animation-timing-function: ease-out; animation-iteration-count: infinite; }
   .pf-ripple { animation: pfRipple ease-out infinite; }
   .pf-ripple.rp1 { animation-duration: 2.4s; animation-delay: 0s;   }
   .pf-ripple.rp2 { animation-duration: 2.4s; animation-delay: .8s;  }
   .pf-ripple.rp3 { animation-duration: 2.4s; animation-delay: 1.6s; }
 }
-@keyframes pfFlow   { to { stroke-dashoffset: -30; } }
-@keyframes pfDrop   { 0% { opacity: 0; transform: translate(0,0); } 12% { opacity: .85; } 100% { opacity: 0; transform: translate(3px,15px); } }
-@keyframes pfRipple { 0% { opacity: .55; transform: scale(.35); } 100% { opacity: 0; transform: scale(1.5); } }
+@keyframes pfSurge  { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.05); } }
+@keyframes pfFall   { 0% { opacity: 0; transform: translate(0,0); } 15% { opacity: .55; } 100% { opacity: 0; transform: translate(5px,32px); } }
+@keyframes pfSpray  { 0% { opacity: 0; transform: translate(0,0); } 18% { opacity: .85; } 100% { opacity: 0; transform: translate(var(--dx,4px), var(--dy,18px)); } }
+@keyframes pfRipple { 0% { opacity: .5; transform: scale(.35); } 100% { opacity: 0; transform: scale(1.5); } }
 
 /* ---------- 24-hour emergency badge ---------- */
 .em-badge {
